@@ -11,7 +11,7 @@ import { Header } from '@/components/header'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Astrobot AI Chatbot',
+    default: 'Astrobot AI Chatbot`',
     template: `%s - Astrobot AI Chatbot`
   },
   description: 'Astrobot was built with Next.js and Vercel.',

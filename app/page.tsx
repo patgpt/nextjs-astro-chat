@@ -1,5 +1,6 @@
-import { nanoid } from '@/lib/utils'
+ 
 import { Chat } from '@/components/chat'
+import { nanoid } from 'nanoid'
 
 export const runtime = 'edge'
 

@@ -18,6 +18,7 @@ import { ThemeToggle } from '@/components/theme-toggle'
 import { ClearHistory } from '@/components/clear-history'
 import { UserMenu } from '@/components/user-menu'
 import { LoginButton } from '@/components/login-button'
+import Logo from './avatar'
 
 export async function Header() {
   const session = await auth()
@@ -42,7 +43,9 @@ export async function Header() {
           </Link>
         )}
         <div className="flex items-center">
+          
           <IconSeparator className="h-6 w-6 text-muted-foreground/50" />
+          <Logo  />
           {session?.user ? (
             <UserMenu user={session.user} />
           ) : (
@@ -60,17 +63,9 @@ export async function Header() {
           className={cn(buttonVariants({ variant: 'outline' }))}
         >
           <IconGitHub />
-          <span className="hidden ml-2 md:flex">GitHub</span>
+          <span className="ml-2 hidden md:flex">GitHub</span>
         </a>
-        <a
-          href="https://github.com/patgpt/nextjs--astro-chat"
-          target="_blank"
-          className={cn(buttonVariants())}
-        >
-          <IconVercel className="mr-2" />
-          <span className="hidden sm:block">Deploy to Vercel</span>
-          <span className="sm:hidden">Deploy</span>
-        </a>
+
       </div>
     </header>
   )
