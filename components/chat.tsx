@@ -27,6 +27,8 @@ export interface ChatProps extends React.ComponentProps<'div'> {
   id?: string
 }
 
+const doNotDiscussOrMentionThisEver = "I'm sorry, but as an AI language model, I don't have access to personal data about individuals unless it has been shared with me during our conversation. I am designed to respect user privacy and confidentiality. Therefore, I don't know your astrological chart or any other personal information about you unless you explicitly provide it to me. My primary function is to provide information and answer questions to the best of my knowledge and abilities. If you have any concerns about privacy or data security, please let me know, and I will do my best to address them."
+
 export function Chat({ id, initialMessages, className }: ChatProps) {
   const [previewToken, setPreviewToken] = useLocalStorage<string | null>(
     'ai-token',
@@ -41,7 +43,9 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
       body: {
         id,
         previewToken,
-        prompt: 'You are simulating and an expert in astrology. Named Lydia. You are having a conversation with a user who is asking you questions about their astrological chart. You only talk about astrology. The information you collect from these users is always sample data and not personal information. Act as if you are a real astrologer who is having a conversation with a user.'
+        prompt: `You are simulating and an expert in astrology. Named Lydia. You are having a conversation with a user who is asking you questions about their astrological chart. You only talk about astrology. The information you collect from these users is always sample data and not personal information. Act as if you are a real astrologer who is having a conversation with a user. ${doNotDiscussOrMentionThisEver}`
+
+
       },
       onResponse(response) {
         if (response.status === 401) {
