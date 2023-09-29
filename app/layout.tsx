@@ -3,13 +3,14 @@ import { Metadata } from 'next'
 import { Toaster } from 'react-hot-toast'
 
 import '@/app/globals.css'
+import { Header } from '@/components/header'
+import { Providers } from '@/components/providers'
+import { TailwindIndicator } from '@/components/tailwind-indicator'
 import { fontMono, fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
-import { TailwindIndicator } from '@/components/tailwind-indicator'
-import { Providers } from '@/components/providers'
-import { Header } from '@/components/header'
-
 export const metadata: Metadata = {
+  
+    metadataBase: new URL('http://localhost:3000'),
   title: {
     default: 'Astrobot AI Chatbot`',
     template: `%s - Astrobot AI Chatbot`
@@ -23,7 +24,18 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png'
-  }
+  },
+  openGraph: {
+    
+    images: '@/public/ava.jpeg',
+    type: 'website',  
+    locale: 'en_US',
+    url: new URL('http://localhost:3000'),
+    siteName: 'Astrobot AI Chatbot',
+    title: 'Astrobot AI Chatbot',
+    description: 'Astrobot AI Chatbot',
+
+  },
 }
 
 interface RootLayoutProps {
@@ -38,7 +50,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={cn(
           'font-sans antialiased',
           fontSans.variable,
-          fontMono.variable
+          fontMono.variable,
+         'bg-cover bg-fixed bg-no-repeat',
+          
         )}
       >
         <Toaster />
