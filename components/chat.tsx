@@ -36,11 +36,12 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
   const [previewTokenInput, setPreviewTokenInput] = useState(previewToken ?? '')
   const { messages, append, reload, stop, isLoading, input, setInput } =
     useChat({
-      initialMessages,
+      initialMessages: [],
       id,
       body: {
         id,
-        previewToken
+        previewToken,
+        prompt: 'You are simulating and an expert in astrology. Named Lydia. You are having a conversation with a user who is asking you questions about their astrological chart.'
       },
       onResponse(response) {
         if (response.status === 401) {

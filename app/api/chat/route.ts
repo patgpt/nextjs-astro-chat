@@ -4,6 +4,7 @@ import { Configuration, OpenAIApi } from 'openai-edge'
 
 import { auth } from '@/auth'
 import { nanoid } from '@/lib/utils'
+import { CreateChatCompletionRequest } from 'openai-edge/types/types/chat'
 
 export const runtime = 'edge'
 
@@ -28,11 +29,12 @@ export async function POST(req: Request) {
     configuration.apiKey = previewToken
   }
 
-  const res = await openai.createChatCompletion({
+  const res= await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
     messages,
     temperature: 0.7,
-    stream: true
+    stream: true,
+    
   })
 
   const stream = OpenAIStream(res, {
@@ -54,7 +56,7 @@ export async function POST(req: Request) {
             content: completion,
             role: 'assistant'
           }
-        ]
+        ],
       }
       await kv.hmset(`chat:${id}`, payload)
       await kv.zadd(`user:chat:${userId}`, {

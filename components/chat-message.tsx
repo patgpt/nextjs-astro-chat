@@ -44,7 +44,7 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
               if (children.length) {
                 if (children[0] == '▍') {
                   return (
-                    <span className="mt-1 cursor-default animate-pulse">▍</span>
+                    <span className="mt-1 animate-pulse cursor-default">▍</span>
                   )
                 }
 

@@ -71,6 +71,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-cover bg-center bg-no-repeat bg-fixed bg-[url('ava.jpeg')] text-foreground;
+    @apply bg-cover bg-center bg-no-repeat bg-fixed  text-foreground;
   }
 }

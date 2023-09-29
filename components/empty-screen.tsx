@@ -1,22 +1,15 @@
 import { UseChatHelpers } from 'ai/react'
-
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ExternalLink } from '@/components/external-link'
 import { IconArrowRight } from '@/components/ui/icons'
 
 const exampleMessages = [
   {
-    heading: 'Explain technical concepts',
-    message: `What is a "serverless function"?`
+    heading: 'Astrological Chart',
+    message: `What is my astrological chart?`
   },
-  {
-    heading: 'Summarize an article',
-    message: 'Summarize the following article for a 2nd grader: \n'
-  },
-  {
-    heading: 'Draft an email',
-    message: `Draft an email to my boss about the following: \n`
-  }
+   
 ]
 
 export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
@@ -26,11 +19,14 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
         <h1 className="mb-2 text-lg font-semibold">
           Welcome to AstroChat
         </h1>
-        <p className="mb-2 leading-normal text-muted-foreground">
+        <div className='flex w-full flex-row items-center justify-between'>
+          <Image src='/ava.jpeg' width={100} height={100} alt={'Woman in the Cosmos'}  />
+          <p className="mb-2 ml-4 text-lg leading-normal text-muted-foreground">
           This is an open source Astrology Chatbot app built by{' '}
           <ExternalLink href="https://x.com/PatGPT4">Patrick Kelly
           </ExternalLink>
-        </p>
+          </p>
+        </div>
         <p className="leading-normal text-muted-foreground">
           You can start a conversation here or try the following examples:
         </p>
