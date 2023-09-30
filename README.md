@@ -1,4 +1,8 @@
-[AstroChat](./public/ava.jpeg)
+ 
+## ASTROCHAT
+
+![alt](public/ava.jpeg)
+ 
 
 ## Features
 
@@ -24,7 +28,6 @@ Follow the steps outlined in the [quick start guide](https://vercel.com/docs/sto
 
 Remember to update your environment variables (`KV_URL`, `KV_REST_API_URL`, `KV_REST_API_TOKEN`, `KV_REST_API_READ_ONLY_TOKEN`) in the `.env` file with the appropriate credentials provided during the KV database setup.
 
-
 ## Running locally
 
 You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/concepts/projects/environment-variables) for this, but a `.env` file is all that is necessary.
@@ -41,7 +44,4 @@ pnpm dev
 ```
 
 Your app template should now be running on [localhost:3000](http://localhost:3000/).
-
-## Authors
-
-@patgpt
+ 
