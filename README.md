@@ -1,4 +1,4 @@
-
+[AstroChat](./public/ava.jpeg)
 
 ## Features
 
